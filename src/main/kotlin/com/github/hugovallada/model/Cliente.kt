@@ -1,16 +1,25 @@
 package com.github.hugovallada.model
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import org.hibernate.annotations.Where
+import javax.persistence.*
+import javax.validation.constraints.NotBlank
 
 @Entity
+@Where(clause = "active = true")
 class Cliente(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         var id: Long,
+        @field:NotBlank
         var name: String,
+        @field:NotBlank
         var endereco: String,
-        var documento: String
-)
+        @field:NotBlank
+        var documento: String,
+        var active: Boolean? = null
+) {
+        @PrePersist
+        fun active(){
+                this.active = true
+        }
+}
