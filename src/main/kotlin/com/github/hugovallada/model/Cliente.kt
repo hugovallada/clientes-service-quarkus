@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank
 class Cliente(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        var id: Long,
+        var id: Long? = null,
         @field:NotBlank
         var name: String,
         @field:NotBlank
