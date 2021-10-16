@@ -25,6 +25,7 @@ dependencies {
     implementation("io.quarkus:quarkus-hibernate-validator:2.2.3.Final")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
+    implementation("io.quarkus:quarkus-smallrye-openapi:2.3.0.Final")
 }
 
 group = "com.github.hugovallada"

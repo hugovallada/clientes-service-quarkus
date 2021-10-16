@@ -2,10 +2,7 @@ package com.github.hugovallada.resource
 
 import com.github.hugovallada.model.Cliente
 import com.github.hugovallada.repository.ClienteRepository
-import org.jboss.resteasy.annotations.ResponseObject
-import org.jboss.resteasy.annotations.Status
 import javax.transaction.Transactional
-import javax.validation.Valid
 import javax.ws.rs.*
 import javax.ws.rs.core.MediaType
 
