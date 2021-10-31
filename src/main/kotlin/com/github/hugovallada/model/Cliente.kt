@@ -1,7 +1,12 @@
 package com.github.hugovallada.model
 
+import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.Where
-import javax.persistence.*
+import java.time.LocalDateTime
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
 import javax.validation.constraints.NotBlank
 
 @Entity
@@ -16,10 +21,7 @@ class Cliente(
         var endereco: String,
         @field:NotBlank
         var documento: String,
-        var active: Boolean? = null
-) {
-        @PrePersist
-        fun active(){
-                this.active = true
-        }
-}
+        var active: Boolean? = true,
+        @CreationTimestamp
+        var creationDate: LocalDateTime? = null
+)

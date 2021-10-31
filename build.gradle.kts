@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm") version "1.5.21"
     kotlin("plugin.allopen") version "1.5.21"
     id("org.jetbrains.kotlin.plugin.jpa") version "1.5.21"
+    id("org.jetbrains.kotlin.plugin.noarg") version "1.5.21"
     id("io.quarkus")
 }
 
@@ -21,8 +22,8 @@ dependencies {
     implementation("io.quarkus:quarkus-jdbc-postgresql")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("io.quarkus:quarkus-arc")
-    implementation("io.quarkus:quarkus-resteasy-jsonb")
-    implementation("io.quarkus:quarkus-resteasy:2.3.0.Final")
+    implementation("io.quarkus:quarkus-resteasy-reactive-jsonb")
+    implementation("io.quarkus:quarkus-resteasy-reactive:2.3.0.Final")
     implementation("io.quarkus:quarkus-hibernate-validator:2.2.3.Final")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")

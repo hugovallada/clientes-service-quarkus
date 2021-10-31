@@ -45,6 +45,10 @@ class ClienteService(private val repository: ClienteRepository, val logger: Logg
         repository.softDelete(id)
     }
 
+    fun getBySpec(name: String) : ClienteResponse {
+        return repository.findBySpecName(name) ?: throw Exception("Error")
+    }
+
     private fun findById(id: Long) : Cliente {
         return repository.findById(id) ?: throw IllegalStateException("Not Found")
     }
